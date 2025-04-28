@@ -5,7 +5,28 @@
   --foreground: #171717;
 }
 
-@theme inline {
+.nav-underline {
+     position: relative;
+     display: inline-block;
+   }
+   .nav-underline::after {
+     content: '';
+     position: absolute;
+     width: 100%;
+     height: 2px;
+     left: 0;
+     bottom: -2px;
+     background: #be185d; /* Tailwind pink-700 */
+     transform: scaleX(0);
+     transform-origin: left;
+     transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+   }
+   .nav-underline:hover::after, .nav-underline:focus::after {
+     transform: scaleX(1);
+   }
+  
+
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
