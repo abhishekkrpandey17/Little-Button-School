@@ -56,7 +56,7 @@ const HeroSection = () => {
         className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4"
       >
         <div className="bg-white/20 backdrop-blur-s  p-8 md:p-20 rounded-3xl shadow-xl max-w-5xl border border-white/30">
-          <p className="text-[10vmin] lg:text-[8vmin] font-extrabold text-[#7641ff] lg:text-[#370ca4] drop-shadow-lg leading-tight">
+          <p className="text-[10vmin] lg:text-[8vmin] font-extrabold text-[#7641ff] lg:text-[#e6008a] drop-shadow-lg leading-tight">
             Welcome to <br />
             <span className="text-blue-100 text-[9vmin]">Little Buttons School</span>
           </p>

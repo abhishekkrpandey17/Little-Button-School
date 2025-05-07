@@ -24,7 +24,7 @@ export default function AdmissionForm() {
         transition={{ duration: 0.7 }}
         className="text-2xl font-extrabold text-center text-pink-900 mb-6"
       >
-        Nursery Admission Form
+        Admission Form
       </motion.h3>
       {submitted ? (
         <motion.div

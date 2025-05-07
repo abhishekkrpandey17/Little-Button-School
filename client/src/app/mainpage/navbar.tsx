@@ -21,7 +21,7 @@ const navItems = [
       { label: "Playgroup", href: "/programs/playgroup" },
       { label: "Nursery", href: "/programs/nursery" },
       { label: "Kindergarten", href: "/programs/kindergarten" },
-      { label: "Daycare", href: "/programs/daycare" },
+      { label: "Daycare", href: "https://daycare.swarananjani.org" },
     ],
   },
   {
@@ -39,7 +39,7 @@ const navItems = [
   {
     title: "Parent Corner",
     items: [
-      { label: "Testimonials", href: "/components/testimonials" },
+      { label: "Testimonials", href: "/testimonials" },
       { label: "FAQ", href: "/faq" },
     ],
   },

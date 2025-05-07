@@ -12,7 +12,8 @@ import Navbar from './mainpage/navbar'
 import Calltoaction from './mainpage/calltoaction'
 import FAQPage from './faq/faqpage'
 import PhotosPage from './photos/photospage'
-import Testimonials from '@/components/testimonials'
+import Testimonials from '@/app/testimonials/testimonials'
+import ContactPage from './contactus/contactpage'
 
 const page = () => {
 
@@ -30,6 +31,7 @@ const page = () => {
     <Calltoaction/>
     <Testimonials/>
     <FAQPage/>
+    <ContactPage/>
     <Footer/>
     </Background>
 
