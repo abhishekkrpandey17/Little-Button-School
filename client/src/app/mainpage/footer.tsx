@@ -6,12 +6,12 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 export default function Footer() {
   const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    { name: "Programs", href: "/programs" },
-    { name: "Admission", href: "/admission" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Parent Corner", href: "/parent-corner" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "About Us", href: "/vision" },
+    { name: "Programs", href: "https://daycare.swarananjani.org" },
+    { name: "Admission", href: "/admissionform" },
+    { name: "Gallery", href: "/photos" },
+    { name: "Parent Corner", href: "/testimonials" },
+    { name: "Contact Us", href: "/contactus" },
   ];
 
   const socialMedia = [
