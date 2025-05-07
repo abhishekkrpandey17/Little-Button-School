@@ -1,87 +1,114 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import {
+  Smile,
+  Users,
+  Lightbulb,
+  CheckCircle,
+  BookOpenCheck,
+  ShieldCheck,
+} from "lucide-react";
 
 const features = [
   {
-    icon: "🤗",
-    title: "Caring Staff",
-    desc: "Our dedicated and loving staff ensure every child feels valued and supported.",
-    color: "from-pink-200 to-pink-100",
+    icon: <Smile className="w-10 h-10 text-pink-500" />,
+    title: "Joyful Learning",
+    desc: "Making learning joyful, interactive, and curiosity-driven.",
   },
   {
-    icon: "🛡️",
+    icon: <Users className="w-10 h-10 text-blue-500" />,
+    title: "Caring Teachers",
+    desc: "Teachers who treat your child like their own.",
+  },
+  {
+    icon: <Lightbulb className="w-10 h-10 text-yellow-500" />,
+    title: "Creative Curriculum",
+    desc: "Blending art, music, and games into learning.",
+  },
+  {
+    icon: <CheckCircle className="w-10 h-10 text-green-500" />,
     title: "Safe Environment",
-    desc: "We provide a secure and nurturing space where children can explore and grow safely.",
-    color: "from-yellow-100 to-yellow-50",
+    desc: "Secure, clean, and welcoming school premises.",
   },
   {
-    icon: "🎨",
-    title: "Activity-Based Learning",
-    desc: "Engaging activities designed to foster creativity, curiosity, and hands-on learning.",
-    color: "from-blue-100 to-blue-50",
+    icon: <BookOpenCheck className="w-10 h-10 text-violet-500" />,
+    title: "Strong Foundation",
+    desc: "Developing academic and emotional readiness for school.",
   },
   {
-    icon: "📚",
-    title: "Early Literacy",
-    desc: "Encouraging reading and language skills through fun and interactive storytelling.",
-    color: "from-green-200 to-green-100",
-  },
-  {
-    icon: "🤸‍♂️",
-    title: "Physical Development",
-    desc: "Promoting motor skills and healthy habits with engaging physical activities.",
-    color: "from-purple-200 to-purple-100",
-  },
-  {
-    icon: "🌱",
-    title: "Nature Exploration",
-    desc: "Connecting children with nature through outdoor learning and gardening activities.",
-    color: "from-teal-200 to-teal-100",
+    icon: <ShieldCheck className="w-10 h-10 text-orange-500" />,
+    title: "Parental Trust",
+    desc: "Full transparency and active parent engagement.",
   },
 ];
 
-export default function Whychooseus() {
+type CardProps = {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+  index: number;
+};
+
+const AnimatedCard: React.FC<CardProps> = ({ icon, title, desc, index }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.3 });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start({ y: 0, opacity: 1 });
+    } else {
+      controls.start({ y: 50, opacity: 0 });
+    }
+  }, [isInView, controls]);
+
   return (
-    <section className="bg-gradient-to-r from-yellow-200 via-pink-100 to-blue-100 py-12 px-6 rounded-lg shadow-lg max-w-7xl mx-auto my-12">
-      <h2 className="text-3xl font-extrabold text-center text-pink-700 mb-8">
-        Why Choose Us
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map((f, i) => (
-          <motion.div
-            key={f.title}
-            initial={{ y: 60, opacity: 0, scale: 0.8 }}
-            whileInView={{
-              y: 0,
-              opacity: 1,
-              scale: 1,
-              transition: { type: "spring", stiffness: 200, delay: i * 0.12 },
-            }}
-            viewport={{ once: true, amount: 0.3 }}   
-            whileHover={{
-              scale: 1.08,
-              rotate: [0, -5, 5, -5, 0],
-              transition: { type: "spring", duration: 0.6 },
-            }}
-            className={`flex flex-col items-center text-center p-6 bg-gradient-to-br ${f.color} rounded-3xl shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer`}
-          >
-            <motion.div
-              whileHover={{
-                scale: [1, 1.2, 0.95, 1.1, 1],
-                rotate: [0, 10, -10, 5, 0],
-                transition: { duration: 0.7 },
-              }}
-              className="text-6xl mb-4 drop-shadow-lg"
-              aria-hidden="false"
-            >
-              {f.icon}
-            </motion.div>
-            <h3 className="text-lg font-bold text-blue-900 mb-2">{f.title}</h3>
-            <p className="text-gray-700 text-sm">{f.desc}</p>
-          </motion.div>
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial={{ y: 50, opacity: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{
+        rotateX: 2,
+        rotateY: -2,
+        boxShadow: "0 12px 24px rgba(0,0,0,0.15)",
+      }}
+      className="bg-white/60 backdrop-blur-md border border-white/40 rounded-2xl p-6 text-center transition-all duration-300"
+    >
+      <div className="mb-4 flex justify-center">{icon}</div>
+      <h3 className="text-xl font-semibold text-[#2563eb]">{title}</h3>
+      <p className="text-gray-700 mt-2 text-sm">{desc}</p>
+    </motion.div>
+  );
+};
+
+const WhyChooseUs = () => {
+  return (
+    <section className="bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-12"
+      >
+        <h2 className="text-4xl font-extrabold text-[#ff69b4] mb-4">
+          Why Choose Us?
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          Building bright futures with care, creativity, and confidence.
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {features.map((item, index) => (
+          <AnimatedCard key={index} {...item} index={index} />
         ))}
       </div>
     </section>
   );
-}
+};
+
+export default WhyChooseUs;

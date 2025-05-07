@@ -1,224 +1,195 @@
 "use client";
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { ChevronDown, Menu } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-const navLinks = [
-  { name: "Home", href: "/" },
+const navItems = [
   {
-    name: "About Us",
-    dropdown: [
-      { name: "Our Vision & Mission", href: "/about/vision-mission" },
-      { name: "Principal's Message", href: "/about/principal-message" },
-      { name: "Our Team", href: "/about/team" },
+    title: "About Us",
+    items: [
+      { label: "Our Vision & Mission", href: "/vision" },
+      { label: "Principal's Message", href: "/principal" },
+      { label: "Our Team", href: "/teampage" },
     ],
   },
   {
-    name: "Programs",
-    dropdown: [
-      { name: "Playgroup", href: "/programs/playgroup" },
-      { name: "Nursery", href: "/programs/nursery" },
-      { name: "Kindergarten", href: "/programs/kindergarten" },
-      { name: "Daycare", href: "/programs/daycare" },
+    title: "Programs",
+    items: [
+      { label: "Playgroup", href: "/programs/playgroup" },
+      { label: "Nursery", href: "/programs/nursery" },
+      { label: "Kindergarten", href: "/programs/kindergarten" },
+      { label: "Daycare", href: "/programs/daycare" },
     ],
   },
   {
-    name: "Admission",
-    dropdown: [
-      { name: "Admission Process", href: "/admission/process" },
-      { name: "Fee Structure", href: "/admission/fee-structure" },
-      { name: "Download Prospectus", href: "/admission/prospectus" },
+    title: "Admission",
+    items: [
+      { label: "Admission Process", href: "/admission/process" },
+      { label: "Fee Structure", href: "/admission/fee" },
+      { label: "Download Prospectus", href: "/admission/prospectus" },
     ],
   },
   {
-    name: "Gallery",
-    dropdown: [
-      { name: "Photos", href: "/gallery/photos" },
-      { name: "Videos", href: "/gallery/videos" },
-      { name: "Event Highlight", href: "/gallery/events" },
-    ],
+    title: "Gallery",
+    items: [{ label: "Photos", href: "/photos" }],
   },
   {
-    name: "Parent Corner",
-    dropdown: [
-      { name: "Testimonial", href: "/parent-corner/testimonial" },
-      { name: "Parent Resource", href: "/parent-corner/resource" },
-      { name: "FAQ", href: "/parent-corner/faq" },
+    title: "Parent Corner",
+    items: [
+      { label: "Testimonials", href: "/components/testimonials" },
+      { label: "FAQ", href: "/faq" },
     ],
   },
-  { name: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar() {
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdown, setDropdown] = useState<string | null>(null);
+  const [openMenu, setOpenMenu] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
+  const [hidden, setHidden] = useState(false);
 
-  // Soft, playful gradient for kids
-  const navBg = "bg-gradient-to-r from-pink-400 via-pink-200 to-blue-100";
-  const navText = "text-blue-900";
-
-  const handleDropdown = (name: string) => {
-    setOpenDropdown(openDropdown === name ? null : name);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setHidden(currentScrollY > prevScrollY && currentScrollY > 80);
+      setPrevScrollY(currentScrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollY]);
 
   return (
-    <nav className={`${navBg} shadow-md sticky top-0 z-50 rounded-full`}>
-  <div className="max-w-6xl mx-auto flex items-center justify-between px-1 py-1">
-        {/* Logo and School Name */}
-        <div className="flex items-center gap-3">
+    <nav
+      className={`bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] backdrop-blur-md shadow-md sticky top-0 z-50 border-b border-pink-300 transition-transform duration-300 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+        <Link href="/" className="flex items-center space-x-2">
           <Image
             src="/image/logo.png"
-            alt="Little Button Logo"
-            width={55}
-            height={55}
-            className=""
+            alt="Logo"
+            width={50}
+            height={50}
+            className="h-10 w-10 rounded-full"
           />
-          <span className="text-lg font-bold tracking-wide text-[#53575C] select-none">
+          <span className="text-[3vmin] font-bold text-[#ff69b4]">
             Little Buttons School
           </span>
+        </Link>
+
+        <div className="md:hidden">
+          <Menu onClick={() => setOpenMenu(!openMenu)} className="text-pink-600" />
         </div>
-        {/* Hamburger for mobile */}
-        <button
-          className="md:hidden p-2 rounded-md text-blue-900 hover:bg-pink-100 transition"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <svg
-            className="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center space-x-6 text-[2.4vmin] font-medium">
+          <Link href="/" className="hover-underline-animation text-[#2563eb] hover:text-[#e11d48]">
+            Home
+          </Link>
+
+          {navItems.map((item) => (
+            <div
+              key={item.title}
+              className="relative group"
+              onMouseEnter={() => setDropdown(item.title)}
+              onMouseLeave={() => setDropdown(null)}
+            >
+              <button className="flex items-center text-sky-700 hover-underline-animation">
+                {item.title}
+                <ChevronDown size={16} className="ml-1" />
+              </button>
+              <AnimatePresence>
+                {dropdown === item.title && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95, y: -5 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: -5 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-0 mt-2 w-52 bg-white shadow-xl rounded-lg p-2 space-y-1 z-50 border border-pink-100"
+                  >
+                    {item.items.map((link) => (
+                      <Link
+                        href={link.href}
+                        key={link.label}
+                        className="block px-4 py-2 text-gray-700 rounded hover:bg-[#fce7f3] hover:text-[#db2777] transition-all"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+
+          <Link
+            href="/contactus"
+            className="hover-underline-animation text-[#2563eb] hover:text-[#e11d48]"
           >
-            {mobileMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-        {/* Nav links */}
-        <ul
-          className={`flex-col md:flex-row md:flex items-center gap-2 md:gap-4 absolute md:static top-full left-0 w-full md:w-auto
-            ${navBg} md:bg-transparent transition-all duration-300 z-40
-            ${mobileMenuOpen ? "flex" : "hidden"}`}
-        >
-          {navLinks.map((link) =>
-            !link.dropdown ? (
-              <li key={link.name} className="w-full md:w-auto">
-                <motion.div
-                  whileHover={{ scale: 1.05, color: "#db2777" }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ type: "spring", stiffness: 350 }}
-                  className="inline-block"
-                >
-                  <Link
-                    href={link.href!}
-                    className={`block px-3 py-2 font-medium ${navText} hover:text-pink-700 transition-colors text-sm relative nav-underline`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              </li>
-            ) : (
-              <li key={link.name} className="relative w-full md:w-auto">
-                <motion.div
-                  whileHover={{ scale: 1.05, color: "#db2777" }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ type: "spring", stiffness: 350 }}
-                  className="inline-block"
-                >
-                  <button
-                    onClick={() => handleDropdown(link.name)}
-                    onMouseEnter={() => setOpenDropdown(link.name)}
-                    onMouseLeave={() => setOpenDropdown(null)}
-                    className={`block px-3 py-2 font-medium ${navText} hover:text-pink-700 transition-colors text-sm relative nav-underline`}
-                  >
-                    {link.name}
-                    <svg
-                      width="14"
-                      height="14"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      className="ml-1 inline"
-                    >
-                      <path d="M4 7l3 3 3-3" />
-                    </svg>
-                  </button>
-                </motion.div>
-                {/* Dropdown */}
-                <AnimatePresence>
-                  {openDropdown === link.name && (
-                    <motion.ul
-                      initial={{ opacity: 0, y: -8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -8 }}
-                      transition={{ duration: 0.18 }}
-                      className="md:absolute left-0 mt-2 w-full md:w-56 bg-white rounded-xl shadow-lg border border-pink-100 z-50"
-                      onMouseEnter={() => setOpenDropdown(link.name)}
-                      onMouseLeave={() => setOpenDropdown(null)}
-                    >
-                      {link.dropdown.map((item) => (
-                        <li key={item.name}>
-                          <motion.div
-                            whileHover={{ scale: 1.04, color: "#db2777" }}
-                            transition={{ type: "spring", stiffness: 300 }}
-                            className="inline-block w-full"
-                          >
-                            <Link
-                              href={item.href}
-                              className="block px-4 py-2 text-sm text-blue-900 hover:text-pink-700 transition-colors nav-underline"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setOpenDropdown(null);
-                              }}
-                            >
-                              {item.name}
-                            </Link>
-                          </motion.div>
-                        </li>
-                      ))}
-                    </motion.ul>
-                  )}
-                </AnimatePresence>
-              </li>
-            )
-          )}
-        </ul>
+            Contact Us
+          </Link>
+        </div>
       </div>
-      {/* Animated underline CSS */}
-      <style jsx global>{`
-        .nav-underline {
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {openMenu && (
+          <motion.div
+            initial={{ height: 0 }}
+            animate={{ height: "auto" }}
+            exit={{ height: 0 }}
+            className="md:hidden px-4 py-3 bg-white shadow-inner text-sm"
+          >
+            <Link href="/" className="block py-2 text-pink-600 font-semibold">
+              Home
+            </Link>
+            {navItems.map((nav) => (
+              <details key={nav.title} className="group mb-2">
+                <summary className="cursor-pointer py-2 text-pink-600 font-semibold">
+                  {nav.title}
+                </summary>
+                <div className="ml-4 space-y-1">
+                  {nav.items.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="block py-1 text-gray-600 hover:text-pink-500"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </details>
+            ))}
+            <Link href="/contactus" className="block py-2 text-pink-600 font-semibold">
+              Contact Us
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <style jsx>{`
+        .hover-underline-animation {
           position: relative;
         }
-        .nav-underline::after {
-          content: '';
+
+        .hover-underline-animation::after {
+          content: "";
           position: absolute;
-          width: 100%;
+          width: 0%;
           height: 2px;
           left: 0;
           bottom: -2px;
-          background: #db2777;
-          border-radius: 2px;
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+          background-color: #ff69b4;
+          transition: width 0.3s;
         }
-        .nav-underline:hover::after,
-        .nav-underline:focus::after {
-          transform: scaleX(1);
+
+        .hover-underline-animation:hover::after {
+          width: 100%;
         }
       `}</style>
     </nav>

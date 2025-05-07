@@ -26,7 +26,7 @@ export default function Footer() {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-gradient-to-r from-yellow-200 via-pink-100 to-blue-100 text-blue-900 py-12 px-6 rounded-t-[3rem] shadow-inner"
+      className="bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] text-blue-900 py-12 px-6  shadow-inner"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Quick Links */}

@@ -1,63 +1,117 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+
+import React, { useEffect, useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
+import {
+  Baby,
+  Flower,
+  Palette,
+  CalendarCheck,
+  GraduationCap,
+  BookUser,
+} from "lucide-react";
 
 const programs = [
   {
+    icon: <Baby className="w-10 h-10 text-pink-500" />,
     title: "Playgroup",
-    description: "A nurturing environment for toddlers to explore and develop basic social skills through play.",
-    emoji: "🧸"
+    desc: "Exploration and play to develop basic social and emotional skills.",
   },
   {
+    icon: <Flower className="w-10 h-10 text-blue-500" />,
     title: "Nursery",
-    description: "Early childhood education focusing on foundational learning and motor skills development.",
-    emoji: "🌼"
+    desc: "Foundational education with activities to build motor and language skills.",
   },
   {
+    icon: <Palette className="w-10 h-10 text-yellow-500" />,
     title: "Kindergarten",
-    description: "Preparing children for school with structured learning, creativity, and social interaction.",
-    emoji: "🎨"
-  }
+    desc: "Structured learning focused on creativity, numeracy, and literacy.",
+  },
+  {
+    icon: <CalendarCheck className="w-10 h-10 text-purple-500" />,
+    title: "Daycare",
+    desc: "A safe and caring environment while you’re at work.",
+  },
+  {
+    icon: <GraduationCap className="w-10 h-10 text-green-500" />,
+    title: "Prep School",
+    desc: "Focused preparation for transition into primary education.",
+  },
+  {
+    icon: <BookUser className="w-10 h-10 text-orange-500" />,
+    title: "Activity Hub",
+    desc: "After-school creative and physical activity programs.",
+  },
 ];
 
-export default function OurPrograms() {
+const AnimatedProgramCard = ({
+  icon,
+  title,
+  desc,
+  index,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+  index: number;
+}) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { margin: "-30%" });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ y: 0, opacity: 1 });
+    } else {
+      controls.start({ y: 50, opacity: 0 });
+    }
+  }, [inView, controls]);
+
   return (
-    <section className="bg-gradient-to-r from-yellow-200 via-pink-100 to-blue-100 py-12 px-6 rounded-lg shadow-lg max-w-7xl mx-auto my-12">
-      <h2 className="text-3xl font-extrabold text-center text-pink-700 mb-8">Our Programs</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {programs.map((program, index) => (
-          <motion.div
-            key={program.title}
-            initial={{ y: 50, opacity: 0, scale: 0.8 }}
-            whileInView={{
-              y: 0,
-              opacity: 1,
-              scale: 1,
-              transition: { type: "spring", stiffness: 200, delay: index * 0.2 }
-            }}
-            whileHover={{
-              scale: 1.05,
-              rotate: [0, -3, 3, -3, 0],
-              transition: { type: "spring", duration: 0.6 }
-            }}
-            className="flex flex-col items-center text-center p-6 bg-gradient-to-br from-white to-pink-50 rounded-3xl shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-          >
-            <motion.div
-              whileHover={{
-                scale: [1, 1.2, 0.95, 1.1, 1],
-                rotate: [0, 10, -10, 5, 0],
-                transition: { duration: 0.7 }
-              }}
-              className="text-7xl mb-4 drop-shadow-lg"
-              aria-hidden="true"
-            >
-              {program.emoji}
-            </motion.div>
-            <h3 className="text-xl font-bold text-blue-900 mb-2">{program.title}</h3>
-            <p className="text-gray-700 text-sm">{program.description}</p>
-          </motion.div>
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial={{ y: 50, opacity: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{
+        rotateX: 2,
+        rotateY: -2,
+        boxShadow: "0 12px 24px rgba(0,0,0,0.15)",
+      }}
+      className="bg-white/60 backdrop-blur-md border border-white/40 rounded-2xl p-6 text-center transition-all duration-300"
+    >
+      <div className="mb-4 flex justify-center">{icon}</div>
+      <h3 className="text-xl font-semibold text-[#2563eb]">{title}</h3>
+      <p className="text-gray-700 mt-2 text-sm">{desc}</p>
+    </motion.div>
+  );
+};
+
+const OurPrograms = () => {
+  return (
+    <section className="bg-gradient-to-r from-[#fcd6e0] via-[#e0f3fc] to-[#d6ecff] py-20 px-6 md:px-12">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-12"
+      >
+        <h2 className="text-4xl font-extrabold text-[#ff69b4] mb-4">
+          Our Programs
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          Nurturing your child’s development through thoughtfully designed stages.
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {programs.map((item, index) => (
+          <AnimatedProgramCard key={index} {...item} index={index} />
         ))}
       </div>
     </section>
   );
-}
+};
+
+export default OurPrograms;
