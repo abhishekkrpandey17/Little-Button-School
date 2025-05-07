@@ -15,7 +15,7 @@ const PrincipalMessage = () => {
         className="text-center mb-12"
       >
         <h1 className="text-5xl font-extrabold text-[#ff69b4] mb-4">
-          Principal's Message
+          Principal&#39;s Message
         </h1>
         <p className="text-gray-700 text-lg max-w-2xl mx-auto">
           A word of warmth, vision, and dedication from our school leader.
