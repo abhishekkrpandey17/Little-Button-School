@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-// import Image from "next/image";
+
 import { useAppContext } from "../context/AppContext";
 
 const HeroSection = () => {
@@ -31,7 +31,7 @@ const HeroSection = () => {
       className="relative w-full h-[90vh] md:h-[85vh] overflow-hidden"
     >
       {/* Background Image Stack */}
-      {bgImages.map((src, i) => (
+      {bgImages.map((item, i) => (
         <motion.div
           key={i}
           className="absolute inset-0 w-full h-full"
@@ -40,6 +40,11 @@ const HeroSection = () => {
           transition={{ duration: 1 }}
         >
           {/* Debugging: console.log(src) can be moved outside JSX if needed */}
+          <img
+            src={"https://api.littlebuttons.swarananjani.org/" + item.images[0]}
+            alt={`Background ${i}`}
+            className="brightness-[0.7] object-cover"
+          />
         </motion.div>
       ))}
 
