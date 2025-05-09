@@ -2,8 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-
 import { useAppContext } from "../context/AppContext";
 const PhotosPage = () => {
   const { gallery } = useAppContext();
@@ -29,7 +27,7 @@ const PhotosPage = () => {
       {/* Grid Gallery */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {galleryImages
-          .slice(6)
+          .slice(6, 12)
           .reverse()
           .map((item, index) => (
             <motion.div
