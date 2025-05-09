@@ -1,20 +1,20 @@
-import React from 'react'
-import Navbar from '../mainpage/navbar'
-import PrincipalMessage from './principal'
-import Footer from '../mainpage/footer'
-
-
+import React from "react";
+import Navbar from "../mainpage/navbar";
+import PrincipalMessage from "./principal";
+import Footer from "../mainpage/footer";
+import { Loader } from "lucide-react";
 
 const page = () => {
   return (
     <>
-    <Navbar/>
+      <Loader />
+      <Navbar />
 
-    <PrincipalMessage/>
+      <PrincipalMessage />
 
-    <Footer/>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;
