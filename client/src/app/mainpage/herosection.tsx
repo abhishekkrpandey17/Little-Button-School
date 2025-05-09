@@ -1,5 +1,6 @@
 "use client";
 
+import { useAppContext } from "../context/AppContext";
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
@@ -12,6 +13,9 @@ const backgroundImages = [
 ];
 
 const HeroSection = () => {
+  const { gallery, extra } = useAppContext();
+
+  console.log(gallery, extra);
   const [bgIndex, setBgIndex] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
@@ -56,7 +60,7 @@ const HeroSection = () => {
         className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4"
       >
         <div className="bg-white/20 backdrop-blur-s  p-8 md:p-20 rounded-3xl shadow-xl max-w-5xl border border-white/30">
-          <p className="text-[10vmin] lg:text-[8vmin] font-extrabold text-white lg:text-white drop-shadow-lg leading-tight">
+          <p className="text-[10vmin] lg:text-[8vmin] font-extrabold text-pink-500 lg:text-pink-500 drop-shadow-lg leading-tight">
             Welcome to <br />
             <span className="text-[#f6f2f2] text-[9vmin]">
               Little Buttons School
@@ -83,7 +87,7 @@ const HeroSection = () => {
               Book a Visit
             </motion.button>
           </Link>
-          <Link href="/apply">
+          <Link href="#apply">
             <motion.button
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}

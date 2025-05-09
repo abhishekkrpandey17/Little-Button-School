@@ -12,7 +12,7 @@ const activity_hub = () => {
         <section className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-6 lg:p-10">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <Image
-              src="/images/pic2.jpeg"
+              src="/image/pic7.jpeg"
               alt="Activity Hub"
               width={500}
               height={400}
