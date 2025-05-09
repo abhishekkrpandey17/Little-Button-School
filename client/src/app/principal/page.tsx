@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../mainpage/navbar";
 import PrincipalMessage from "./principal";
 import Footer from "../mainpage/footer";
-import { Loader } from "lucide-react";
+import Loader from "../components/Loader";
 
 const page = () => {
   return (
