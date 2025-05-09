@@ -21,7 +21,7 @@ const HeroSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % bgImages.length);
-    }, 7000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [bgImages]);
 
