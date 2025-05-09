@@ -1,6 +1,5 @@
 "use client";
 
-import { useAppContext } from "../context/AppContext";
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
@@ -13,9 +12,6 @@ const backgroundImages = [
 ];
 
 const HeroSection = () => {
-  const { gallery, extra } = useAppContext();
-
-  console.log(gallery, extra);
   const [bgIndex, setBgIndex] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
