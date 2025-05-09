@@ -70,7 +70,7 @@ const PrincipalMessage = () => {
         {/* Image */}
         <div className="flex justify-center mb-6">
           <Image
-            src={`${process.env.NEXT_PUBLIC_API_BASE_URL_TEST}/uploads/${data.image}`}
+            src={`${process.env.NEXT_PUBLIC_API_BASE_URL_TEST}${data.image}`}
             alt={data.slogan}
             width={120}
             height={120}
