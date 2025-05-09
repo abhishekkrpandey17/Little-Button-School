@@ -42,7 +42,7 @@ const PhotosPage = () => {
                 src={
                   "https://api.littlebuttons.swarananjani.org/" + item.images[0]
                 }
-                alt={`Background ${i}`}
+                alt={`Background ${index}`}
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
               />
             </motion.div>
