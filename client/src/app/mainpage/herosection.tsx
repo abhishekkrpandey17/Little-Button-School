@@ -5,6 +5,8 @@ import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
+import { useAppContext } from "../context/AppContext";
+
 const backgroundImages = [
   "/image/schoolbanner1.jpg",
   "/image/schoolbanner2.jpg",
@@ -12,6 +14,8 @@ const backgroundImages = [
 ];
 
 const HeroSection = () => {
+  const { gallery, extra } = useAppContext();
+  console.log(gallery, extra);
   const [bgIndex, setBgIndex] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
