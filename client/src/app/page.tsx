@@ -12,12 +12,10 @@ import FAQPage from "./faq/faqpage";
 import PhotosPage from "./photos/photospage";
 import Testimonials from "@/app/testimonials/testimonials";
 import ContactPage from "./contactus/contactpage";
-import Loader from "./components/Loader";
 
 const page = () => {
   return (
     <>
-      <Loader />
       <Background>
         <Navbar />
         <HeroSection />
