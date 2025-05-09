@@ -4,37 +4,42 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-
 import { useAppContext } from "../context/AppContext";
 
-const backgroundImages = [
-  "/image/schoolbanner1.jpg",
-  "/image/schoolbanner2.jpg",
-  "/image/schoolbanner3.jpg",
-];
-
 const HeroSection = () => {
-  const { gallery, extra } = useAppContext();
-  console.log(gallery, extra);
+  const { gallery } = useAppContext();
+  const [bgImages, setBgImages] = useState<string[]>([]);
   const [bgIndex, setBgIndex] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
 
-  // Rotate background images every 7s
+  // Get hero banners from gallery
+  useEffect(() => {
+    const heroBanners = gallery
+      .filter((item) => item.description.toLowerCase().includes("herobanner"))
+      .flatMap((item) =>
+        item.images.map(
+          (img) => `${process.env.NEXT_PUBLIC_API_URL}/uploads/${img}`
+        )
+      );
+    setBgImages(heroBanners);
+  }, [gallery]);
+
+  // Rotate background every 7 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setBgIndex((prev) => (prev + 1) % backgroundImages.length);
-    }, 7000); // slower change
+      setBgIndex((prev) => (prev + 1) % bgImages.length);
+    }, 7000);
     return () => clearInterval(interval);
-  }, []);
+  }, [bgImages]);
 
   return (
     <section
       ref={ref}
       className="relative w-full h-[90vh] md:h-[85vh] overflow-hidden"
     >
-      {/* Stacked Images with fade */}
-      {backgroundImages.map((src, i) => (
+      {/* Background Image Stack */}
+      {bgImages.map((src, i) => (
         <motion.div
           key={i}
           className="absolute inset-0 w-full h-full"
@@ -48,6 +53,7 @@ const HeroSection = () => {
             layout="fill"
             objectFit="cover"
             className="brightness-[0.7]"
+            priority={i === 0}
           />
         </motion.div>
       ))}
@@ -59,8 +65,8 @@ const HeroSection = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4"
       >
-        <div className="bg-white/20 backdrop-blur-s  p-8 md:p-20 rounded-3xl shadow-xl max-w-5xl border border-white/30">
-          <p className="text-[10vmin] lg:text-[8vmin] font-extrabold text-pink-500 lg:text-pink-500 drop-shadow-lg leading-tight">
+        <div className="bg-white/20 backdrop-blur-sm p-8 md:p-20 rounded-3xl shadow-xl max-w-5xl border border-white/30">
+          <p className="text-[10vmin] lg:text-[8vmin] font-extrabold text-pink-500 drop-shadow-lg leading-tight">
             Welcome to <br />
             <span className="text-[#f6f2f2] text-[9vmin]">
               Little Buttons School
@@ -71,7 +77,6 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* Buttons */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
