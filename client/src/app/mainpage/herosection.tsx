@@ -3,27 +3,19 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import { useAppContext } from "../context/AppContext";
 
 const HeroSection = () => {
   const { gallery } = useAppContext();
-  const [bgImages, setBgImages] = useState<string[]>([]);
+
+  const bgImages = gallery.slice(0, 6);
+
+  console.log(bgImages);
+
   const [bgIndex, setBgIndex] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
-
-  // Get hero banners from gallery
-  useEffect(() => {
-    const heroBanners = gallery
-      .filter((item) => item.description.toLowerCase().includes("herobanner"))
-      .flatMap((item) =>
-        item.images.map(
-          (img) => `${process.env.NEXT_PUBLIC_API_URL}/uploads/${img}`
-        )
-      );
-    setBgImages(heroBanners);
-  }, [gallery]);
 
   // Rotate background every 7 seconds
   useEffect(() => {
@@ -47,14 +39,7 @@ const HeroSection = () => {
           animate={{ opacity: i === bgIndex ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
-          <Image
-            src={src}
-            alt={`Background ${i}`}
-            layout="fill"
-            objectFit="cover"
-            className="brightness-[0.7]"
-            priority={i === 0}
-          />
+          {/* Debugging: console.log(src) can be moved outside JSX if needed */}
         </motion.div>
       ))}
 
