@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useAppContext } from "../context/AppContext";
-const PhotosPage = () => {
+const PhotosAll = () => {
   const { gallery } = useAppContext();
 
   const galleryImages = gallery;
@@ -52,4 +52,4 @@ const PhotosPage = () => {
   );
 };
 
-export default PhotosPage;
+export default PhotosAll;

@@ -1,18 +1,17 @@
-import React from 'react'
-import Navbar from '../mainpage/navbar'
-import PhotosPage from './photospage'
-import Footer from '../mainpage/footer'
+import React from "react";
+import Navbar from "../mainpage/navbar";
+import Footer from "../mainpage/footer";
+import PhotosAll from "./PhotosAll";
 
 const page = () => {
   return (
     <>
-    <Navbar/>
-    <PhotosPage/>
+      <Navbar />
+      <PhotosAll />
 
-    <Footer/>
-
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;
