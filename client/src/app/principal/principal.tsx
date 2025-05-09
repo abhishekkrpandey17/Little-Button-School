@@ -72,7 +72,7 @@ const PrincipalMessage = () => {
         {/* Image */}
         <div className="flex justify-center mb-6">
           <Image
-            src={`${process.env.NEXT_PUBLIC_API_BASE_URL_TEST}${data.image}`}
+            src="https://www.api.littlebuttons.swarananjani.org/1746789324129_director_image.jpeg"
             alt={data.slogan}
             width={120}
             height={120}
