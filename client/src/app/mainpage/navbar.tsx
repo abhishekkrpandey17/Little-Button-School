@@ -18,20 +18,16 @@ const navItems = [
   {
     title: "Programs",
     items: [
-      { label: "Playgroup", href: "/programs/playgroup" },
-      { label: "Nursery", href: "/programs/nursery" },
-      { label: "Kindergarten", href: "/programs/kindergarten" },
+      { label: "kg1", href: "/program/kg1" },
+      { label: "kg2", href: "/program/kg2" },
+      { label: "nursery", href: "/program/nursery" },
+      { label: "prep-school", href: "/program/prep-school" },
+      { label: "play-school", href: "/program/play-school" },
+      { label: "activity-hub", href: "/program/activity-hub" },
       { label: "Daycare", href: "https://daycare.swarananjani.org" },
     ],
   },
-  {
-    title: "Admission",
-    items: [
-      { label: "Admission Process", href: "/admission/process" },
-      { label: "Fee Structure", href: "/admission/fee" },
-      { label: "Download Prospectus", href: "/admission/prospectus" },
-    ],
-  },
+
   {
     title: "Gallery",
     items: [{ label: "Photos", href: "/photos" }],
@@ -82,12 +78,18 @@ export default function Navbar() {
         </Link>
 
         <div className="md:hidden">
-          <Menu onClick={() => setOpenMenu(!openMenu)} className="text-pink-600" />
+          <Menu
+            onClick={() => setOpenMenu(!openMenu)}
+            className="text-pink-600"
+          />
         </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-6 text-[2.4vmin] font-medium">
-          <Link href="/" className="hover-underline-animation text-[#2563eb] hover:text-[#e11d48]">
+          <Link
+            href="/"
+            className="hover-underline-animation text-[#2563eb] hover:text-[#e11d48]"
+          >
             Home
           </Link>
 
@@ -165,7 +167,10 @@ export default function Navbar() {
                 </div>
               </details>
             ))}
-            <Link href="/contactus" className="block py-2 text-pink-600 font-semibold">
+            <Link
+              href="/contactus"
+              className="block py-2 text-pink-600 font-semibold"
+            >
               Contact Us
             </Link>
           </motion.div>

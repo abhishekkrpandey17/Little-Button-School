@@ -56,9 +56,11 @@ const HeroSection = () => {
         className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4"
       >
         <div className="bg-white/20 backdrop-blur-s  p-8 md:p-20 rounded-3xl shadow-xl max-w-5xl border border-white/30">
-          <p className="text-[10vmin] lg:text-[8vmin] font-extrabold text-[#7641ff] lg:text-red-600 drop-shadow-lg leading-tight">
+          <p className="text-[10vmin] lg:text-[8vmin] font-extrabold text-white lg:text-white drop-shadow-lg leading-tight">
             Welcome to <br />
-            <span className="text-[#f6f2f2] text-[9vmin]">Little Buttons School</span>
+            <span className="text-[#f6f2f2] text-[9vmin]">
+              Little Buttons School
+            </span>
           </p>
           <p className="mt-4 text-[3vmin] text-white/90 font-medium">
             Where every child blooms with joy, curiosity, and creativity.
