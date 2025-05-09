@@ -42,9 +42,11 @@ const PrincipalMessage = () => {
   if (!data)
     return <p className="text-center text-red-500 mt-10">Message not found.</p>;
 
+  console.log(`${process.env.NEXT_PUBLIC_API_BASE_URL_TEST}${data.image}`);
   return (
     <main className="min-h-screen bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
       {/* Header */}
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
