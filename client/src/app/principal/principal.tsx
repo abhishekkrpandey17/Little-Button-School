@@ -71,7 +71,7 @@ const PrincipalMessage = () => {
       >
         {/* Image */}
         <div className="flex justify-center mb-6">
-          <Image
+          <img
             src="https://www.api.littlebuttons.swarananjani.org/1746789324129_director_image.jpeg"
             alt={data.slogan}
             width={120}
