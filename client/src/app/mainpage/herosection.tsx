@@ -50,7 +50,7 @@ const HeroSection = () => {
           <h1 className="text-5xl md:text-7xl font-extrabold text-pink-500 drop-shadow-md ">
             Welcome to
             <br />
-            <span className="text-white text-3xl md:text-5xl">
+            <span className="text-white text-xl md:text-5xl">
               Little Buttons Pre School
             </span>
           </h1>
