@@ -24,10 +24,9 @@ export const sendMail = async (req, res) => {
         pass: process.env.EMAIL_PASS,
       },
     });
-
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "info@e-bindle.com",
+      to: "aritra.chakraborty203@gmail.com",
       subject: "Admission",
       html: `
       <h2>New Admission Form Submission</h2>
