@@ -42,15 +42,15 @@ const HeroSection = () => {
       ))}
 
       {/* Black Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
+      <div className="absolute inset-0 bg-black/50 z-10" />
 
       {/* Foreground Content */}
-      <div className="absolute inset-0 flex flex-col  text-center px-8 z-20">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-20">
         <div>
           <h1 className="text-5xl md:text-8xl font-extrabold text-pink-500 drop-shadow-md ">
             Welcome to
             <br />
-            <span className="text-white text-2xl md:text-5xl -mt-4">
+            <span className="text-white text-2xl md:text-5xl">
               Little Buttons Pre School
             </span>
           </h1>
