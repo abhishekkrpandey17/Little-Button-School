@@ -93,7 +93,7 @@ const PrincipalMessage = () => {
             alt={data.slogan}
             width={120}
             height={120}
-            className="rounded-full border-4 border-pink-300 shadow-md object-cover"
+            className="border-4 border-pink-300 shadow-md object-cover"
           />
         </div>
 
@@ -126,7 +126,7 @@ const PrincipalMessage = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-white/60 backdrop-blur-md border border-white/40 rounded-3xl shadow-xl max-w-4xl mx-auto p-6 md:p-12 text-center"
+        className="bg-white/60 mt-8 backdrop-blur-md border border-white/40 rounded-3xl shadow-xl max-w-4xl mx-auto p-6 md:p-12 text-center"
       >
         <div className="flex justify-center mb-6">
           <img
@@ -134,7 +134,7 @@ const PrincipalMessage = () => {
             alt={data.slogan}
             width={120}
             height={120}
-            className="rounded-full border-4 border-pink-300 shadow-md object-cover"
+            className=" border-4 border-pink-300 shadow-md object-cover"
           />
         </div>
 
