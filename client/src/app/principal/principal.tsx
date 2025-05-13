@@ -130,7 +130,7 @@ const PrincipalMessage = () => {
       >
         <div className="flex justify-center mb-6">
           <img
-            src={`https://www.api.littlebuttons.swarananjani.org/${data.image}`}
+            src={"/image/d1.jpeg"}
             alt={data.slogan}
             width={120}
             height={120}

@@ -6,34 +6,36 @@ import Image from "next/image";
 
 const team = [
   {
-    name: "Mrs. A. Sharma",
-    role: "Principal",
-    img: "/image/principal.jpg",
+    name: "Mrs. Spandana Majhi Sohi",
+    role: "Curriculum Director",
+    img: "/image/d2.jpg",
   },
   {
-    name: "Mr. R. Verma",
-    role: "Head of Kindergarten",
-    img: "/image/team1.jpg",
+    name: "Mrs. Swarnjeet Kaur Gill",
+    role: "Director",
+    img: "/image/d1.jpeg",
+  },
+
+  {
+    name: "Ms. Smita",
+    role: "Core Faculty",
+    img: "/image/Smita1.jpeg",
   },
   {
-    name: "Ms. N. Kapoor",
-    role: "Activity Coordinator",
-    img: "/image/team2.jpg",
+    name: "Ms. Monika",
+    role: "Core Faculty",
+    img: "/image/Monika1.jpeg",
   },
   {
-    name: "Mrs. P. Sen",
-    role: "Senior Nursery Educator",
-    img: "/image/team3.jpg",
+    name: "Ms.Pari",
+    role: "Core Faculty",
+    img: "/image/Pari.jpeg",
   },
+
   {
-    name: "Mr. I. Khan",
-    role: "Physical Education",
-    img: "/image/team4.jpg",
-  },
-  {
-    name: "Ms. R. Dutta",
-    role: "Counselor",
-    img: "/image/team5.jpg",
+    name: "Didi",
+    role: "Support staff",
+    img: "/image/didi.jpeg",
   },
 ];
 
@@ -41,16 +43,16 @@ const AnimatedTeamCard = ({
   name,
   role,
   img,
-  index,
-}: {
+}: // index,
+{
   name: string;
   role: string;
   img: string;
   index: number;
 }) => {
-    const ref = useRef(null);
-    const inView = useInView(ref, { once: false, amount: 0.3 });
-    
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: false, amount: 0.3 });
+
   const controls = useAnimation();
 
   useEffect(() => {
@@ -62,30 +64,31 @@ const AnimatedTeamCard = ({
   }, [inView, controls]);
 
   return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial={{ y: 50, opacity: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.15)" }}
-      className="bg-white/60 backdrop-blur-md border border-white/30 rounded-2xl p-6 text-center transition-all duration-300"
-    >
+    // <motion.div
+    //   ref={ref}
+    //   animate={controls}
+    //   initial={{ y: 50, opacity: 0 }}
+    //   transition={{ duration: 0.5, delay: index * 0.1 }}
+    //   whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.15)" }}
+    //   className="bg-white/60 backdrop-blur-md border border-white/30 rounded-2xl p-6 text-center transition-all duration-300"
+    // >
+    <div className="bg-white/60 backdrop-blur-md border border-white/30 rounded-2xl p-6 text-center transition-all duration-300">
       <Image
         src={img}
         alt={name}
-        width={120}
-        height={120}
+        width={220}
+        height={220}
         className="rounded-full mx-auto mb-4 border-4 border-pink-200"
       />
       <h3 className="text-lg font-bold text-blue-700">{name}</h3>
       <p className="text-sm text-gray-600">{role}</p>
-    </motion.div>
+    </div>
   );
 };
 
 const OurTeam = () => {
   return (
-    <section className="bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
+    <section className="bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] pt-20 pb-20  px-6 md:px-12">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -93,16 +96,71 @@ const OurTeam = () => {
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-4xl font-extrabold text-[#ff69b4] mb-4">Meet Our Team</h2>
+        <h2 className="text-4xl font-extrabold text-[#ff69b4] mb-4">
+          Meet Our Team
+        </h2>
         <p className="text-gray-700 max-w-2xl mx-auto text-lg">
           Passionate, experienced, and dedicated to nurturing young minds.
         </p>
+        <p className="mt-8 text-center text-3xl text-[#ff69b4] font-extrabold w-[90vw]">
+          Our Directors
+        </p>
       </motion.div>
+      <div>
+        <div className="directors mt-6 flex flex-wrap justify-center items-center w-[90vw] gap-x-10">
+          {team.slice(0, 2).map((item, index) => (
+            <AnimatedTeamCard
+              key={index}
+              img={item.img}
+              name={item.name}
+              role={item.role}
+              index={index}
+            />
+          ))}
+        </div>
+      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {team.map((member, index) => (
-          <AnimatedTeamCard key={index} {...member} index={index} />
-        ))}
+      <div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <p className="text-center mt-24 text-4xl text-[#ff69b4] font-extrabold w-[90vw]">
+            Our Core Teachers
+          </p>
+        </motion.div>
+
+        <div className="directors mt-6 flex flex-wrap justify-center items-center w-[90vw] gap-x-10">
+          {team.slice(2, 5).map((item, index) => (
+            <AnimatedTeamCard
+              key={index}
+              img={item.img}
+              name={item.name}
+              role={item.role}
+              index={index}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p className="text-center mt-10 text-3xl text-[#ff69b4] font-extrabold w-[90vw]">
+          Our Support Staff
+        </p>
+        <div className="directors mt-6 flex flex-wrap justify-center items-center w-[90vw] gap-x-10">
+          {team.slice(5, 6).map((item, index) => (
+            <AnimatedTeamCard
+              key={index}
+              img={item.img}
+              name={item.name}
+              role={item.role}
+              index={index}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
