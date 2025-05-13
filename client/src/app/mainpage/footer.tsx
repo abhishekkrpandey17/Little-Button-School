@@ -89,11 +89,11 @@ export default function Footer() {
             School Address
           </h3>
           <address className="not-italic text-gray-800 text-base font-semibold">
-            123 Little Button Lane
+           Villa 667
             <br />
-            Happy Town, Kidsland 45678
+          Omaxe city 1 ,
             <br />
-            Wonderland
+            Indore, Madhya Pradesh
           </address>
         </div>
 
@@ -105,7 +105,7 @@ export default function Footer() {
           <p className="text-base font-semibold">
             Phone:{" "}
             <a href="tel:+1234567890" className="hover:underline text-blue-800">
-              +1 234 567 890
+             +91 9039024010
             </a>
           </p>
           <p className="text-base font-semibold">
@@ -114,7 +114,7 @@ export default function Footer() {
               href="mailto:info@littlebutton.com"
               className="hover:underline text-blue-800"
             >
-              info@littlebutton.com
+              swarananjani.edu@gmail.com
             </a>
           </p>
         </div>
