@@ -80,6 +80,36 @@ const PrincipalMessage = () => {
         </p>
       </motion.div>
 
+
+        <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="bg-white/60 mt-8 backdrop-blur-md border border-white/40 rounded-3xl shadow-xl max-w-4xl mx-auto p-6 md:p-12 text-center"
+      >
+        <div className="flex justify-center mb-6">
+          <img
+            src={"/image/d1.jpeg"}
+            alt={data.slogan}
+            width={120}
+            height={120}
+            className="rounded-full border-4 border-pink-300 shadow-md object-cover"
+          />
+        </div>
+
+        <p className="text-gray-800 text-base leading-relaxed whitespace-pre-line">
+          {data.description}
+        </p>
+
+        <p className="mt-6 text-pink-600 font-bold text-lg">
+          – Ms. Swaranjeet Kaur Gill
+        </p>
+        <p className="text-sm text-gray-600">
+          Director, Little Buttons and SEF
+        </p>
+      </motion.div>
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -121,34 +151,7 @@ const PrincipalMessage = () => {
         </p>
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="bg-white/60 mt-8 backdrop-blur-md border border-white/40 rounded-3xl shadow-xl max-w-4xl mx-auto p-6 md:p-12 text-center"
-      >
-        <div className="flex justify-center mb-6">
-          <img
-            src={"/image/d1.jpeg"}
-            alt={data.slogan}
-            width={120}
-            height={120}
-            className="rounded-full border-4 border-pink-300 shadow-md object-cover"
-          />
-        </div>
-
-        <p className="text-gray-800 text-base leading-relaxed whitespace-pre-line">
-          {data.description}
-        </p>
-
-        <p className="mt-6 text-pink-600 font-bold text-lg">
-          – Ms. Swaranjeet Kaur Gill
-        </p>
-        <p className="text-sm text-gray-600">
-          Director, Little Buttons and SEF
-        </p>
-      </motion.div>
+    
     </main>
   );
 };
