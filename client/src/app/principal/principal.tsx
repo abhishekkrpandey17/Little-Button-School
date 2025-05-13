@@ -93,7 +93,7 @@ const PrincipalMessage = () => {
             alt={data.slogan}
             width={120}
             height={120}
-            className="border-4 border-pink-300 shadow-md object-cover"
+            className="rounded-full border-4 border-pink-300 shadow-md object-cover"
           />
         </div>
 
@@ -134,7 +134,7 @@ const PrincipalMessage = () => {
             alt={data.slogan}
             width={120}
             height={120}
-            className=" border-4 border-pink-300 shadow-md object-cover"
+            className="rounded-full border-4 border-pink-300 shadow-md object-cover"
           />
         </div>
 
