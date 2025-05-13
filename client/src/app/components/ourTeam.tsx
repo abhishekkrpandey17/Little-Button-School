@@ -96,7 +96,7 @@ const OurTeam = () => {
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-4xl mt-20 font-extrabold text-[#ff69b4] mb-4">
+        <h2 className="text-4xl mt-10 font-extrabold text-[#ff69b4] mb-4">
           Meet Our Team
         </h2>
         <p className="text-gray-700 max-w-2xl mx-auto text-lg">
