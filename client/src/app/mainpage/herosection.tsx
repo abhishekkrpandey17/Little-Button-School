@@ -45,7 +45,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Foreground Content */}
-      <div className="absolute inset-0 flex flex-col items-center pl-5 text-center px-4 z-20">
+      <div className="absolute inset-0 flex flex-col items-center  px-4 z-20">
         <div>
           <h1 className="text-5xl md:text-8xl font-extrabold text-pink-500 drop-shadow-md ">
             Welcome to
