@@ -36,7 +36,7 @@ const HeroSection = () => {
           <img
             src={`https://api.littlebuttons.swarananjani.org/${item.images[0]}`}
             alt={`Background ${i}`}
-            className="w-full h-full object-cover brightness-[0.7]"
+            className="w-full h-full object-cover position-center brightness-[0.7]"
           />
         </motion.div>
       ))}
@@ -48,7 +48,7 @@ const HeroSection = () => {
         transition={{ duration: 0.8 }}
         className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
       >
-        <div className="bg-white/20 backdrop-blur-[2px] px-6 py-8 md:px-20 md:py-16 rounded-3xl shadow-xl border border-white/20 max-w-xl md:max-w-4xl">
+        <div className="bg-white/20 backdrop-blur-[2px] px-6 py-16 md:px-20 md:py-16 rounded-3xl shadow-xl border border-white/20 max-w-xl md:max-w-4xl">
           <h1 className="text-3xl md:text-5xl font-extrabold text-pink-500 drop-shadow-md leading-snug">
             Welcome to
             <br />
