@@ -22,7 +22,7 @@ const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative w-full h-[90vh] md:h-[85vh] overflow-hidden"
+      className="relative w-full h-[90vh] md:h-[90vh] overflow-hidden"
     >
       {/* Background Images */}
       {bgImages.map((item, i) => (
