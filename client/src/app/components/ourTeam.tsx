@@ -88,7 +88,7 @@ const AnimatedTeamCard = ({
 
 const OurTeam = () => {
   return (
-    <section className="bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] pt-20 pb-20  px-6 md:px-12">
+    <section className="bg-gradient-to-r  from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] pt-20 pb-20  px-6 md:px-12">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +96,7 @@ const OurTeam = () => {
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-4xl font-extrabold text-[#ff69b4] mb-4">
+        <h2 className="text-4xl mt-20 font-extrabold text-[#ff69b4] mb-4">
           Meet Our Team
         </h2>
         <p className="text-gray-700 max-w-2xl mx-auto text-lg">
