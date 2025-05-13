@@ -34,7 +34,7 @@ const team = [
   },
 
   {
-    name: "Didi",
+    name: "Sunita Parmar (Didi)",
     role: "Support staff",
     img: "/image/didi.jpeg",
   },
