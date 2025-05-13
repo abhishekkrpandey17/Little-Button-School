@@ -73,7 +73,7 @@ const PrincipalMessage = () => {
         className="text-center mb-12"
       >
         <h1 className="text-5xl font-extrabold text-[#ff69b4] mb-4">
-          {data.slogan}
+          Directors&lsquo; Message
         </h1>
         <p className="text-gray-700 text-lg max-w-2xl mx-auto">
           A word of warmth, vision, and dedication from our school leader.
@@ -106,6 +106,47 @@ const PrincipalMessage = () => {
         </p>
         <p className="text-sm text-gray-600">
           Director, Little Buttons and SEF
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="mt-8 bg-white/60 backdrop-blur-md border border-white/40 rounded-3xl shadow-xl max-w-4xl mx-auto p-6 md:p-12 text-center"
+      >
+        <div className="flex justify-center mb-6 ">
+          <img
+            src={"/image/d2.jpg"}
+            alt={data.slogan}
+            width={120}
+            height={120}
+            className="rounded-full border-4 border-pink-300 shadow-md object-cover"
+          />
+        </div>
+
+        <p className="text-gray-800 text-base leading-relaxed whitespace-pre-line">
+          &quot;At Little Buttons, we believe children blossom not just through
+          teaching, but through every warm smile, gentle word, and caring hand
+          that surrounds them each day.&ldquo; Namaste and a heartfelt welcome
+          to Little Buttons! As the Curriculum Head, I have the joy and
+          responsibility of shaping the learning journey for our little
+          learners—and I do so with deep respect for both modern educational
+          insights and the rich cultural fabric of our Indian heritage. At
+          Little Buttons, we believe that the foundation years of a child’s life
+          are not just about learning the alphabet or numbers—they’re about
+          building character, sparking curiosity, and nurturing emotional
+          strength. Our curriculum is thoughtfully designed to balance academic
+          readiness with life skills, creative expression, and values that
+          reflect who we are as a society.
+        </p>
+
+        <p className="mt-6 text-pink-600 font-bold text-lg">
+          – Ms. Spandana Majhi Sohi
+        </p>
+        <p className="text-sm text-gray-600">
+          Curriculum Director, Little Buttons and SEF
         </p>
       </motion.div>
     </main>
