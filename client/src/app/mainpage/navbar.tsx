@@ -45,24 +45,16 @@ export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [hidden, setHidden] = useState(false);
 
+  // Final scroll logic
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-    const threshold = 100;
-
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      const scrollY = window.scrollY;
 
-      if (currentScrollY > threshold) {
-        if (currentScrollY > lastScrollY) {
-          setHidden(true); // scrolling down
-        } else {
-          setHidden(false); // scrolling up
-        }
+      if (scrollY <= 10 || scrollY > 350) {
+        setHidden(false); // Show
       } else {
-        setHidden(false); // always show if near top
+        setHidden(true); // Hide
       }
-
-      lastScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -71,7 +63,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] backdrop-blur-md shadow-md sticky top-0 z-50 border-b border-pink-300 transition-transform duration-300 ${
+      className={`fixed top-0 w-full z-50 bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] backdrop-blur-md shadow-md border-b border-pink-300 transition-transform duration-300 ${
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
