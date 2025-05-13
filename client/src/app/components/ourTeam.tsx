@@ -5,16 +5,17 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
 
 const team = [
+    {
+    name: "Mrs. Swarnjeet Kaur Gill",
+    role: "Director",
+    img: "/image/d1.jpeg",
+  },
   {
     name: "Mrs. Spandana Majhi Sohi",
     role: "Curriculum Director",
     img: "/image/d2.jpg",
   },
-  {
-    name: "Mrs. Swarnjeet Kaur Gill",
-    role: "Director",
-    img: "/image/d1.jpeg",
-  },
+
 
   {
     name: "Ms. Smita",
@@ -107,7 +108,7 @@ const OurTeam = () => {
         </p>
       </motion.div>
       <div>
-        <div className="directors mt-6 flex flex-wrap justify-center items-center w-[90vw] gap-x-10">
+        <div className="directors mt-6 flex flex-wrap justify-center items-center w-[90vw] gap-x-10 gap-y-6">
           {team.slice(0, 2).map((item, index) => (
             <AnimatedTeamCard
               key={index}
@@ -133,7 +134,7 @@ const OurTeam = () => {
           </p>
         </motion.div>
 
-        <div className="directors mt-6 flex flex-wrap justify-center items-center w-[90vw] gap-x-10">
+        <div className="directors mt-6 flex flex-wrap justify-center items-center w-[90vw] gap-x-10 gap-y-6">
           {team.slice(2, 5).map((item, index) => (
             <AnimatedTeamCard
               key={index}
@@ -150,7 +151,7 @@ const OurTeam = () => {
         <p className="text-center mt-10 text-3xl text-[#ff69b4] font-extrabold w-[90vw]">
           Our Support Staff
         </p>
-        <div className="directors mt-6 flex flex-wrap justify-center items-center w-[90vw] gap-x-10">
+        <div className="directors mt-6 flex flex-wrap justify-center items-center w-[90vw] gap-x-10 gap-y-6">
           {team.slice(5, 6).map((item, index) => (
             <AnimatedTeamCard
               key={index}
