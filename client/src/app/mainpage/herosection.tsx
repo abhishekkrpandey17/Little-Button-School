@@ -47,10 +47,10 @@ const HeroSection = () => {
       {/* Foreground Content - Left Aligned */}
       <div className="absolute inset-0 flex items-center justify-start px-4 md:px-16 z-20">
         <div className="text-left max-w-2xl">
-          <h1 className="text-5xl md:text-8xl font-extrabold text-pink-500 drop-shadow-md ">
+          <h1 className="text-5xl md:text-8xl font-extrabold text-pink-500 drop-shadow-md leading-[10.65vmin] md:leading-[11vmin]">
             Welcome to
             <br />
-            <span className="text-white text-xl md:text-5xl">
+            <span className="text-white text-xl md:text-5xl ">
               Little Buttons Pre School
             </span>
           </h1>
