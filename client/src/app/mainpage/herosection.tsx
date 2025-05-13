@@ -50,7 +50,9 @@ const HeroSection = () => {
           <h1 className="text-5xl md:text-7xl font-extrabold text-pink-500 drop-shadow-md leading-snug">
             Welcome to
             <br />
-            <span className="text-white">Little Buttons Pre School</span>
+            <span className="text-white text-4xl">
+              Little Buttons Pre School
+            </span>
           </h1>
           <p className="mt-4 text-sm md:text-lg text-white/90 font-medium">
             Where every child blooms with joy, curiosity, and creativity.
