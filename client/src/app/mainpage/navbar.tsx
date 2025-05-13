@@ -11,7 +11,7 @@ const navItems = [
     title: "About Us",
     items: [
       { label: "Our Vision & Mission", href: "/vision" },
-      { label: "Principal's Message", href: "/principal" },
+      { label: "Directors' Message", href: "/principal" },
       { label: "Our Team", href: "/teampage" },
     ],
   },
