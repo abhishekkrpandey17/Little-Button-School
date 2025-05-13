@@ -47,7 +47,7 @@ const HeroSection = () => {
       {/* Foreground Content - Left Aligned */}
       <div className="absolute inset-0 flex items-center justify-start px-4 md:px-16 z-20">
         <div className="text-left max-w-2xl">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-pink-500 drop-shadow-md ">
+          <h1 className="text-5xl md:text-9xl font-extrabold text-pink-500 drop-shadow-md ">
             Welcome to
             <br />
             <span className="text-white text-xl md:text-5xl">
