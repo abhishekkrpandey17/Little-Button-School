@@ -28,7 +28,7 @@ const HeroSection = () => {
       {bgImages.map((item, i) => (
         <motion.div
           key={i}
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full z-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: i === bgIndex ? 1 : 0 }}
           transition={{ duration: 1 }}
@@ -36,13 +36,16 @@ const HeroSection = () => {
           <img
             src={`https://api.littlebuttons.swarananjani.org/${item.images[0]}`}
             alt={`Background ${i}`}
-            className="w-full h-full object-cover position-center brightness-[0.9]"
+            className="w-full h-full object-cover object-center brightness-[0.9]"
           />
         </motion.div>
       ))}
 
+      {/* Black Overlay */}
+      <div className="absolute inset-0 bg-black/50 z-10" />
+
       {/* Foreground Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-20">
         <div>
           <h1 className="text-5xl md:text-7xl font-extrabold text-pink-500 drop-shadow-md leading-snug">
             Welcome to
