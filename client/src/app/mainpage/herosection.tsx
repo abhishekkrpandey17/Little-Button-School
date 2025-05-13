@@ -44,10 +44,10 @@ const HeroSection = () => {
       {/* Foreground Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
         <div>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-pink-500 drop-shadow-md leading-snug">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-pink-500 drop-shadow-md leading-snug">
             Welcome to
             <br />
-            <span className="text-white">Little Buttons School</span>
+            <span className="text-white">Little Buttons Pre School</span>
           </h1>
           <p className="mt-4 text-sm md:text-lg text-white/90 font-medium">
             Where every child blooms with joy, curiosity, and creativity.

@@ -77,7 +77,7 @@ export default function Navbar() {
             className="h-10 w-10 rounded-full"
           />
           <span className="text-[3vmin] font-bold text-[#ff69b4]">
-            Little Buttons School
+            Little Buttons Pre School
           </span>
         </Link>
 
