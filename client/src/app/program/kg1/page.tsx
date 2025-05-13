@@ -14,7 +14,7 @@ const Kg1 = () => {
       <Navbar />
       <main className="bg-gradient-to-b from-[#dbc3eb] to-[#fdf2ff] p-6">
         <section className="max-w-5xl mx-auto bg-white mt-20 rounded-3xl shadow-xl p-6 lg:p-10">
-          <div className="flex flex-col lg:flex-row items-center gap-8">
+          <div className="flex flex-col lg:flex-row items-center gap-4">
             <Image
               src="/image/pic1.jpg"
               alt="Kindergarten 1"
