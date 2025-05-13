@@ -73,7 +73,7 @@ const PrincipalMessage = () => {
         className="text-center mb-12"
       >
         <h1 className="text-5xl font-extrabold text-[#ff69b4] mb-4">
-          Directors&lsquo; Message
+          Directors&apos; Message
         </h1>
         <p className="text-gray-700 text-lg max-w-2xl mx-auto">
           A word of warmth, vision, and dedication from our school leader.
