@@ -18,8 +18,8 @@ const navItems = [
   {
     title: "Programs",
     items: [
-      { label: "kg1", href: "/program/kg1" },
-      { label: "kg2", href: "/program/kg2" },
+      { label: "kindergarten 1", href: "/program/kg1" },
+      { label: "kindergarten 2", href: "/program/kg2" },
       { label: "nursery", href: "/program/nursery" },
       { label: "prep-school", href: "/program/prep-school" },
       { label: "play-school", href: "/program/play-school" },
