@@ -22,7 +22,7 @@ const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative w-full h-[90vh] md:h-[90vh] overflow-hidden"
+      className="relative w-full h-[90vh] md:h-[96vh] overflow-hidden"
     >
       {/* Background Images */}
       {bgImages.map((item, i) => (
@@ -36,7 +36,7 @@ const HeroSection = () => {
           <img
             src={`https://api.littlebuttons.swarananjani.org/${item.images[0]}`}
             alt={`Background ${i}`}
-            className="w-full h-full object-cover position-center brightness-[0.7]"
+            className="w-full h-full object-cover position-center brightness-[0.9]"
           />
         </motion.div>
       ))}
