@@ -27,7 +27,6 @@ const navItems = [
       { label: "Daycare", href: "https://daycare.swarananjani.org" },
     ],
   },
-
   {
     title: "Gallery",
     items: [{ label: "Photos", href: "/photos" }],
@@ -44,18 +43,31 @@ const navItems = [
 export default function Navbar() {
   const [dropdown, setDropdown] = useState<string | null>(null);
   const [openMenu, setOpenMenu] = useState(false);
-  const [prevScrollY, setPrevScrollY] = useState(0);
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    const threshold = 100;
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setHidden(currentScrollY > prevScrollY && currentScrollY > 80);
-      setPrevScrollY(currentScrollY);
+
+      if (currentScrollY > threshold) {
+        if (currentScrollY > lastScrollY) {
+          setHidden(true); // scrolling down
+        } else {
+          setHidden(false); // scrolling up
+        }
+      } else {
+        setHidden(false); // always show if near top
+      }
+
+      lastScrollY = currentScrollY;
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollY]);
+  }, []);
 
   return (
     <nav
