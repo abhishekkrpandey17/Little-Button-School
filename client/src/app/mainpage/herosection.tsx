@@ -44,47 +44,47 @@ const HeroSection = () => {
       {/* Black Overlay */}
       <div className="absolute inset-0 bg-black/50 z-10" />
 
-      {/* Foreground Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-20">
-        <div>
-          <h1 className="text-5xl md:text-8xl font-extrabold text-pink-500 drop-shadow-md ">
+      {/* Foreground Content - Left Aligned */}
+      <div className="absolute inset-0 flex items-center justify-start px-4 md:px-16 z-20">
+        <div className="text-left max-w-2xl">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-pink-500 drop-shadow-md leading-tight">
             Welcome to
             <br />
-            <span className="text-white text-2xl md:text-5xl">
+            <span className="text-white text-3xl md:text-5xl">
               Little Buttons Pre School
             </span>
           </h1>
           <p className="mt-4 text-sm md:text-lg text-white/90 font-medium">
             Where every child blooms with joy, curiosity, and creativity.
           </p>
-        </div>
 
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : {}}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="mt-6 flex flex-col md:flex-row items-center gap-4"
-        >
-          <Link href="/visit">
-            <motion.button
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg"
-            >
-              Book a Visit
-            </motion.button>
-          </Link>
-          <Link href="#apply">
-            <motion.button
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg"
-            >
-              Apply Now
-            </motion.button>
-          </Link>
-        </motion.div>
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={isInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="mt-6 flex flex-col sm:flex-row items-start gap-4"
+          >
+            <Link href="/visit">
+              <motion.button
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg"
+              >
+                Book a Visit
+              </motion.button>
+            </Link>
+            <Link href="#apply">
+              <motion.button
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg"
+              >
+                Apply Now
+              </motion.button>
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
