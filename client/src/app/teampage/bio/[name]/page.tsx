@@ -29,7 +29,7 @@ const mockBios: Record<string, { role: string; bio: string; img: string }> = {
   "Ms.Pari Kalra": {
     role: "Core Faculty",
     img: "/image/Pari.jpeg",
-    bio: "A proud mother and dedicated teacher, Ms. Pari brings magic to first experiences...",
+    bio: "Mother to 3 beautiful daughters, I stand extremely passionate about education and believe that with hard work and determination, we can achieve great things.  I feel truly blessed to be a Nursery teacher here at Little Buttons. For the past two years, I’ve had the joy of guiding our youngest learners through their first experiences of school life—and it’s been nothing short of magical.",
   },
   "Sunita Parmar (Didi)": {
     role: "Support staff",
@@ -56,7 +56,7 @@ const Page = () => {
     <>
       <Navbar />
       <main className="bg-gradient-to-b from-[#dbc3eb] to-[#fdf2ff] p-8">
-        <div className="max-w-3xl mt-36 mx-auto bg-white shadow-xl rounded-3xl p-10 text-center">
+        <div className="max-w-3xl mt-30 mx-auto bg-white shadow-xl rounded-3xl p-10 text-center">
           <Image
             src={person.img}
             alt={decodedName}
