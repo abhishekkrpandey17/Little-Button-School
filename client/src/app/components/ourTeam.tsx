@@ -3,9 +3,9 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
-
+import Link from "next/link";
 const team = [
-    {
+  {
     name: "Mrs. Swarnjeet Kaur Gill",
     role: "Director",
     img: "/image/d1.jpeg",
@@ -16,19 +16,18 @@ const team = [
     img: "/image/d2.jpg",
   },
 
-
   {
-    name: "Ms. Smita",
+    name: "Ms. Smita Mathur",
     role: "Core Faculty",
     img: "/image/Smita1.jpeg",
   },
   {
-    name: "Ms. Monika",
+    name: "Ms. Monika Naik",
     role: "Core Faculty",
     img: "/image/Monika1.jpeg",
   },
   {
-    name: "Ms.Pari",
+    name: "Ms.Pari Kalra",
     role: "Core Faculty",
     img: "/image/Pari.jpeg",
   },
@@ -73,17 +72,19 @@ const AnimatedTeamCard = ({
     //   whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.15)" }}
     //   className="bg-white/60 backdrop-blur-md border border-white/30 rounded-2xl p-6 text-center transition-all duration-300"
     // >
-    <div className="bg-white/60 backdrop-blur-md border border-white/30 rounded-2xl p-6 text-center transition-all duration-300">
-      <Image
-        src={img}
-        alt={name}
-        width={220}
-        height={220}
-        className="rounded-full mx-auto mb-4 border-4 border-pink-200"
-      />
-      <h3 className="text-lg font-bold text-blue-700">{name}</h3>
-      <p className="text-sm text-gray-600">{role}</p>
-    </div>
+    <Link href={`/teampage/bio/${encodeURIComponent(name)}`} passHref>
+      <div className="bg-white/60 backdrop-blur-md border border-white/30 rounded-2xl p-6 text-center transition-all duration-300">
+        <Image
+          src={img}
+          alt={name}
+          width={220}
+          height={220}
+          className="rounded-full mx-auto mb-4 border-4 border-pink-200"
+        />
+        <h3 className="text-lg font-bold text-blue-700">{name}</h3>
+        <p className="text-sm text-gray-600">{role}</p>
+      </div>
+    </Link>
   );
 };
 
