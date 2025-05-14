@@ -56,7 +56,7 @@ const Page = () => {
     <>
       <Navbar />
       <main className="bg-gradient-to-b from-[#dbc3eb] to-[#fdf2ff] p-8">
-        <div className="max-w-3xl mt-30 mx-auto bg-white shadow-xl rounded-3xl p-10 text-center">
+        <div className="max-w-3xl mt-24 mx-auto bg-white shadow-xl rounded-3xl p-10 pb-16 text-center">
           <Image
             src={person.img}
             alt={decodedName}
