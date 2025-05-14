@@ -8,7 +8,7 @@ const PhotosAll = () => {
 
   const galleryImages = gallery;
   return (
-    <main className="min-h-screen bg-gradient-to-r from-[#fcd6e0] via-[#e0f3fc] to-[#d6ecff] py-20 px-6 md:px-12">
+    <main className="pt-20 bg-gradient-to-r from-[#fcd6e0] via-[#e0f3fc] to-[#d6ecff] py-20 px-6 md:px-12">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -16,7 +16,7 @@ const PhotosAll = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h1 className="text-5xl font-bold text-[#ff69b4] mb-4">
+        <h1 className="text-5xl mt-16 font-bold text-[#ff69b4] mb-4">
           Photo Gallery
         </h1>
         <p className="text-gray-700 text-lg max-w-xl mx-auto">
