@@ -40,7 +40,7 @@ export default function Footer() {
               <motion.li
                 key={link.name}
                 whileHover={{ scale: 1.15, color: "#f2c7f0", x: 8 }}
-                whileTap={{ scale: 0.95, color: "#be185d" }}
+                whileTap={{ scale: 0.95, color: "#fff" }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="cursor-pointer text-base font-semibold"
               >

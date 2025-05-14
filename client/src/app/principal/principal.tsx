@@ -65,7 +65,7 @@ const PrincipalMessage = () => {
     return <p className="text-center text-red-500 mt-10">Message not found.</p>;
 
   return (
-    <main className="min-h-screen bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
+    <main className="pt-10 pb-10 bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
