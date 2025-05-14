@@ -13,7 +13,7 @@ const FAQPage = () => {
     .reverse(); // latest first
 
   return (
-    <main className="min-h-screen bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
+    <main className=" bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -21,7 +21,7 @@ const FAQPage = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h1 className="text-5xl font-bold text-[#ff69b4] mb-4">FAQs</h1>
+        <h1 className="text-5xl mt-16 font-bold text-[#ff69b4] mb-4">FAQs</h1>
         <p className="text-gray-700 text-lg max-w-xl mx-auto">
           Frequently Asked Questions from our lovely parents.
         </p>

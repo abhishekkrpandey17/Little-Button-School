@@ -13,7 +13,9 @@ const ContactPage = () => {
         transition={{ duration: 0.7 }}
         className="text-center mb-12"
       >
-        <h1 className="text-5xl font-bold text-[#ff69b4] mb-4">Contact Us</h1>
+        <h1 className="mt-16 text-5xl font-bold text-[#ff69b4] mb-4">
+          Contact Us
+        </h1>
         <p className="text-gray-700 text-lg max-w-xl mx-auto">
           We love to hear from you! Reach out with your questions, suggestions,
           or feedback.
