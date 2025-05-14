@@ -95,7 +95,7 @@ const OurTeam = () => {
   return (
     <section className="bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] pt-20 pb-20 px-6 md:px-12">
       {/* Title */}
-      <h2 className="text-4xl mt-10 font-extrabold text-[#ff69b4] mb-4">
+      <h2 className="text-4xl text-center  mt-10 font-extrabold text-[#ff69b4] mb-4">
         Meet Our Team
       </h2>
       <p className="text-gray-700 max-w-2xl mx-auto text-lg">
@@ -156,7 +156,7 @@ const OurTeam = () => {
       </motion.div>
 
       {/* Directors */}
-      <div className="flex flex-wrap justify-center items-center w-[90vw] gap-x-10 gap-y-6">
+      <div className="flex mt-8 flex-wrap justify-center items-center w-[90vw] gap-x-10 gap-y-6">
         {team.slice(0, 2).map((item, index) => (
           <AnimatedTeamCard
             key={index}
