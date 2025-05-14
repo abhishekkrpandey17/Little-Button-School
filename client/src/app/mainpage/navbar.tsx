@@ -18,16 +18,13 @@ const navItems = [
   {
     title: "Programs",
     items: [
-        { label: "Play-school", href: "/program/play-school" },
-           { label: "Nursery", href: "/program/nursery" },
+      { label: "Play-school", href: "/program/play-school" },
+      { label: "Nursery", href: "/program/nursery" },
       { label: "Kindergarten 1", href: "/program/kg1" },
       { label: "Kindergarten 2", href: "/program/kg2" },
-         { label: "Daycare", href: "https://daycare.swarananjani.org" },
-        { label: "Activity-hub", href: "/program/activity-hub" },
+      { label: "Daycare", href: "https://daycare.swarananjani.org" },
+      { label: "Activity-hub", href: "/program/activity-hub" },
       { label: "Prep-school", href: "/program/prep-school" },
-    
-    
-
     ],
   },
   {
@@ -80,7 +77,7 @@ export default function Navbar() {
             className="h-10 w-10"
           />
           <span className="text-[3vmin] font-bold text-[#ff69b4]">
-            Little Buttons Pre School
+            Little Buttons
           </span>
         </Link>
 
