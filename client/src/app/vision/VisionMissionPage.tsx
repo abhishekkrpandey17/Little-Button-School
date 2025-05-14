@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const VisionMissionPage = () => {
   return (
-    <main className="bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
+    <main className="min bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
       {/* Page Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -13,7 +13,7 @@ const VisionMissionPage = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h1 className="text-5xl mt-16 font-extrabold text-[#ff69b4] mb-4">
+        <h1 className="text-5xl font-extrabold text-[#ff69b4] mb-4">
           Our Vision & Mission
         </h1>
         <p className="text-gray-700 text-lg max-w-2xl mx-auto">
