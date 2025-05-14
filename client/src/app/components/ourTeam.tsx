@@ -98,7 +98,7 @@ const OurTeam = () => {
       <h2 className="text-4xl text-center  mt-10 font-extrabold text-[#ff69b4] mb-4">
         Meet Our Team
       </h2>
-      <p className="text-gray-700 max-w-2xl mx-auto text-lg">
+      <p className="text-gray-700 max-w-2xl mx-auto text-lg text-center">
         Passionate, experienced, and dedicated to nurturing young minds.
       </p>
 
@@ -128,7 +128,7 @@ const OurTeam = () => {
       </div>
 
       {/* Support Staff */}
-      <p className="text-center mt-10 text-3xl text-[#ff69b4] font-extrabold w-[90vw]">
+      <p className="text-center mt-24 text-3xl text-[#ff69b4] font-extrabold w-[90vw]">
         Our Support Staff
       </p>
       <div className="mt-7 flex flex-wrap justify-center items-center w-[90vw] gap-x-10 gap-y-6">
@@ -150,7 +150,7 @@ const OurTeam = () => {
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <p className="mt-8 text-center text-3xl text-[#ff69b4] font-extrabold w-[90vw]">
+        <p className="mt-24 text-center text-3xl text-[#ff69b4] font-extrabold w-[90vw]">
           Our Directors
         </p>
       </motion.div>
