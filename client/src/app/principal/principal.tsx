@@ -65,14 +65,14 @@ const PrincipalMessage = () => {
     return <p className="text-center text-red-500 mt-10">Message not found.</p>;
 
   return (
-    <main className="pt-16 pb-10 bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
+    <main className=" pb-10 bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h1 className="text-5xl font-extrabold text-[#ff69b4] mb-4">
+        <h1 className="mt-16 text-5xl font-extrabold text-[#ff69b4] mb-4">
           Directors&apos; Message
         </h1>
         <p className="text-gray-700 text-lg max-w-2xl mx-auto">
