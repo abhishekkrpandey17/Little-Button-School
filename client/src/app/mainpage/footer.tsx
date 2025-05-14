@@ -127,7 +127,7 @@ export default function Footer() {
         viewport={{ once: true }}
         className="mt-10 text-center text-sm text-gray-700"
       >
-        &copy; {new Date().getFullYear()} Little Button. All rights reserved.
+        &copy; {new Date().getFullYear()} swarananjani. All rights reserved.
       </motion.div>
     </div>
   );

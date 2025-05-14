@@ -14,7 +14,7 @@ const team = [
   {
     name: "Mrs. Spandana Majhi Sohi",
     role: "Curriculum Director",
-    img: "/image/d2.jpg",
+    img: "/image/d21.jpg",
   },
   {
     name: "Ms. Smita Mathur",
@@ -84,7 +84,7 @@ const AnimatedTeamCard = ({
       </Link>
       <Link href={`/teampage/bio/${encodeURIComponent(name)}`} passHref>
         <button className="mt-4 bg-[#ff69b4] hover:bg-pink-500 text-white px-4 py-2 rounded-lg text-sm transition">
-          View Bio
+          Our Message
         </button>
       </Link>
     </motion.div>
@@ -95,36 +95,6 @@ const OurTeam = () => {
   return (
     <section className="bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] pt-20 pb-20 px-6 md:px-12">
       {/* Title */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-center mb-12"
-      >
-        <h2 className="text-4xl mt-10 font-extrabold text-[#ff69b4] mb-4">
-          Meet Our Team
-        </h2>
-        <p className="text-gray-700 max-w-2xl mx-auto text-lg">
-          Passionate, experienced, and dedicated to nurturing young minds.
-        </p>
-        <p className="mt-8 text-center text-3xl text-[#ff69b4] font-extrabold w-[90vw]">
-          Our Directors
-        </p>
-      </motion.div>
-
-      {/* Directors */}
-      <div className="flex flex-wrap justify-center items-center w-[90vw] gap-x-10 gap-y-6">
-        {team.slice(0, 2).map((item, index) => (
-          <AnimatedTeamCard
-            key={index}
-            img={item.img}
-            name={item.name}
-            role={item.role}
-            index={index}
-          />
-        ))}
-      </div>
 
       {/* Core Faculty */}
       <motion.div
@@ -157,6 +127,37 @@ const OurTeam = () => {
       </p>
       <div className="mt-7 flex flex-wrap justify-center items-center w-[90vw] gap-x-10 gap-y-6">
         {team.slice(5).map((item, index) => (
+          <AnimatedTeamCard
+            key={index}
+            img={item.img}
+            name={item.name}
+            role={item.role}
+            index={index}
+          />
+        ))}
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-12"
+      >
+        <h2 className="text-4xl mt-10 font-extrabold text-[#ff69b4] mb-4">
+          Meet Our Team
+        </h2>
+        <p className="text-gray-700 max-w-2xl mx-auto text-lg">
+          Passionate, experienced, and dedicated to nurturing young minds.
+        </p>
+        <p className="mt-8 text-center text-3xl text-[#ff69b4] font-extrabold w-[90vw]">
+          Our Directors
+        </p>
+      </motion.div>
+
+      {/* Directors */}
+      <div className="flex flex-wrap justify-center items-center w-[90vw] gap-x-10 gap-y-6">
+        {team.slice(0, 2).map((item, index) => (
           <AnimatedTeamCard
             key={index}
             img={item.img}
