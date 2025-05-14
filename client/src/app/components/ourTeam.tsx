@@ -155,7 +155,7 @@ const OurTeam = () => {
       <p className="text-center mt-10 text-3xl text-[#ff69b4] font-extrabold w-[90vw]">
         Our Support Staff
       </p>
-      <div className="flex flex-wrap justify-center items-center w-[90vw] gap-x-10 gap-y-6">
+      <div className="mt-7 flex flex-wrap justify-center items-center w-[90vw] gap-x-10 gap-y-6">
         {team.slice(5).map((item, index) => (
           <AnimatedTeamCard
             key={index}
