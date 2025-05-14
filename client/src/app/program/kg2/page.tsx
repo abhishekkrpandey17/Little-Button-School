@@ -16,7 +16,7 @@ const Kg2 = () => {
         <section className="max-w-5xl mt-20 mx-auto bg-white rounded-3xl shadow-xl p-6 lg:p-10">
           <div className="flex flex-col lg:flex-row items-center gap-4">
             <Image
-              src="/image/pic3.jpeg"
+              src="/image/pic4.jpg"
               alt="Kindergarten 2 Program"
               width={500}
               height={400}
