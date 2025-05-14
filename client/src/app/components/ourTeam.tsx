@@ -95,6 +95,12 @@ const OurTeam = () => {
   return (
     <section className="bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] pt-20 pb-20 px-6 md:px-12">
       {/* Title */}
+      <h2 className="text-4xl mt-10 font-extrabold text-[#ff69b4] mb-4">
+        Meet Our Team
+      </h2>
+      <p className="text-gray-700 max-w-2xl mx-auto text-lg">
+        Passionate, experienced, and dedicated to nurturing young minds.
+      </p>
 
       {/* Core Faculty */}
       <motion.div
@@ -144,12 +150,6 @@ const OurTeam = () => {
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-4xl mt-10 font-extrabold text-[#ff69b4] mb-4">
-          Meet Our Team
-        </h2>
-        <p className="text-gray-700 max-w-2xl mx-auto text-lg">
-          Passionate, experienced, and dedicated to nurturing young minds.
-        </p>
         <p className="mt-8 text-center text-3xl text-[#ff69b4] font-extrabold w-[90vw]">
           Our Directors
         </p>
