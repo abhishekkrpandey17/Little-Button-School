@@ -62,13 +62,13 @@ const Page = () => {
             alt={decodedName}
             width={200}
             height={200}
-            className="rounded-full mx-auto border-4 border-pink-200 mb-6"
+            className="rounded-full mx-auto border-4 border-pink-200 mb-3"
           />
-          <h1 className="text-3xl font-bold text-[#933194] mb-2">
+          <h1 className="text-3xl font-bold text-[#933194] mb-1">
             {decodedName}
           </h1>
           <p className="text-lg text-gray-600 mb-6">{person.role}</p>
-          <p className="text-base text-gray-800 leading-relaxed">
+          <p className="text-base text-gray-800 leading-relaxed text-center">
             {person.bio}
           </p>
         </div>
