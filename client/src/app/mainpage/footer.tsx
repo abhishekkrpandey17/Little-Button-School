@@ -39,7 +39,7 @@ export default function Footer() {
             {quickLinks.map((link) => (
               <motion.li
                 key={link.name}
-                whileHover={{ scale: 1.15, color: "#f2c7f0", x: 8 }}
+                whileHover={{ scale: 1.15, color: "#fff", x: 8 }}
                 whileTap={{ scale: 0.95, color: "#fff" }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="cursor-pointer text-base font-semibold"
@@ -89,9 +89,9 @@ export default function Footer() {
             School Address
           </h3>
           <address className="not-italic text-gray-800 text-base font-semibold">
-           Villa 667
+            Villa 667
             <br />
-          Omaxe city 1 ,
+            Omaxe city 1 ,
             <br />
             Indore, Madhya Pradesh
           </address>
@@ -105,7 +105,7 @@ export default function Footer() {
           <p className="text-base font-semibold">
             Phone:{" "}
             <a href="tel:+1234567890" className="hover:underline text-blue-800">
-             +91 9039024010
+              +91 9039024010
             </a>
           </p>
           <p className="text-base font-semibold">

@@ -65,7 +65,7 @@ const PrincipalMessage = () => {
     return <p className="text-center text-red-500 mt-10">Message not found.</p>;
 
   return (
-    <main className="pt-10 pb-10 bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
+    <main className="mt-20 pb-10 bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -80,8 +80,7 @@ const PrincipalMessage = () => {
         </p>
       </motion.div>
 
-
-        <motion.div
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -150,8 +149,6 @@ const PrincipalMessage = () => {
           Curriculum Director, Little Buttons and SEF
         </p>
       </motion.div>
-
-    
     </main>
   );
 };
