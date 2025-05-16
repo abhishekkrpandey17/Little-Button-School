@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { motion, useInView, useAnimation } from "framer-motion";
 import {
   Baby,
@@ -11,35 +12,42 @@ import {
   BookUser,
 } from "lucide-react";
 
+// Program Data with Slugs
 const programs = [
   {
     icon: <Baby className="w-10 h-10 text-pink-500" />,
     title: "Playgroup",
+    slug: "playgroup",
     desc: "Exploration and play to develop basic social and emotional skills.",
   },
   {
     icon: <Flower className="w-10 h-10 text-blue-500" />,
     title: "Nursery",
+    slug: "nursery",
     desc: "Foundational education with activities to build motor and language skills.",
   },
   {
     icon: <Palette className="w-10 h-10 text-yellow-500" />,
     title: "Kindergarten",
+    slug: "kg1",
     desc: "Structured learning focused on creativity, numeracy, and literacy.",
   },
   {
     icon: <CalendarCheck className="w-10 h-10 text-purple-500" />,
     title: "Daycare",
+    slug: "daycare",
     desc: "A safe and caring environment while you’re at work.",
   },
   {
     icon: <GraduationCap className="w-10 h-10 text-green-500" />,
     title: "Prep School",
+    slug: "prep_school",
     desc: "Focused preparation for transition into primary education.",
   },
   {
     icon: <BookUser className="w-10 h-10 text-orange-500" />,
     title: "Activity Hub",
+    slug: "activity_hub",
     desc: "After-school creative and physical activity programs.",
   },
 ];
@@ -48,16 +56,19 @@ const AnimatedProgramCard = ({
   icon,
   title,
   desc,
+  slug,
   index,
 }: {
   icon: React.ReactNode;
   title: string;
   desc: string;
+  slug: string;
   index: number;
 }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { margin: "-30%" });
   const controls = useAnimation();
+  const router = useRouter();
 
   useEffect(() => {
     if (inView) {
@@ -78,7 +89,8 @@ const AnimatedProgramCard = ({
         rotateY: -2,
         boxShadow: "0 12px 24px rgba(0,0,0,0.15)",
       }}
-      className="bg-white/60 backdrop-blur-md border border-white/40 rounded-2xl p-6 text-center transition-all duration-300"
+      onClick={() => router.push(`/program/${slug}`)}
+      className="cursor-pointer bg-white/60 backdrop-blur-md border border-white/40 rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105"
     >
       <div className="mb-4 flex justify-center">{icon}</div>
       <h3 className="text-xl font-semibold text-[#2563eb]">{title}</h3>
