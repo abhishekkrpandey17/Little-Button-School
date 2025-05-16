@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const team = [
   {
-    name: "Mrs. Swarnjeet Kaur Gill",
+    name: "Ms. Swarnjeet Kaur Gill",
     role: "Director",
     img: "/image/d1.jpeg",
   },
@@ -17,22 +17,22 @@ const team = [
     img: "/image/d21.jpg",
   },
   {
-    name: "Ms. Smita Mathur",
+    name: "Mrs. Smita Mathur",
     role: "Core Faculty",
     img: "/image/Smita1.jpeg",
   },
   {
-    name: "Ms. Monika Naik",
+    name: "Mrs. Monika Naik",
     role: "Core Faculty",
     img: "/image/Monika1.jpeg",
   },
   {
-    name: "Ms.Pari Kalra",
+    name: "Mrs.Pari Kalra",
     role: "Core Faculty",
     img: "/image/Pari.jpeg",
   },
   {
-    name: "Sunita Parmar (Didi)",
+    name: "Ms. Sunita Parmar (Didi)",
     role: "Support staff",
     img: "/image/didi.jpeg",
   },
