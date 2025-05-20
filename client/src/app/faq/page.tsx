@@ -1,18 +1,20 @@
-import React from 'react'
-import Navbar from '../mainpage/navbar'
-import FAQPage from './faqpage'
-import Footer from '../mainpage/footer'
+import React from "react";
+import Navbar from "../mainpage/navbar";
+import FAQPage from "./faqpage";
+import Footer from "../mainpage/footer";
+import Loader from "../components/Loader";
 
 const page = () => {
   return (
     <>
-    <Navbar/>
+      <Loader />
+      <Navbar />
 
-    <FAQPage/>
+      <FAQPage />
 
-    <Footer/>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

@@ -11,25 +11,20 @@ const navItems = [
     title: "About Us",
     items: [
       { label: "Our Vision & Mission", href: "/vision" },
-      { label: "Principal's Message", href: "/principal" },
+      { label: "Directors' Message", href: "/principal" },
       { label: "Our Team", href: "/teampage" },
     ],
   },
   {
     title: "Programs",
     items: [
-      { label: "Playgroup", href: "/programs/playgroup" },
-      { label: "Nursery", href: "/programs/nursery" },
-      { label: "Kindergarten", href: "/programs/kindergarten" },
+      { label: "Play-school", href: "/program/play-school" },
+      { label: "Nursery", href: "/program/nursery" },
+      { label: "Kindergarten 1", href: "/program/kg1" },
+      { label: "Kindergarten 2", href: "/program/kg2" },
       { label: "Daycare", href: "https://daycare.swarananjani.org" },
-    ],
-  },
-  {
-    title: "Admission",
-    items: [
-      { label: "Admission Process", href: "/admission/process" },
-      { label: "Fee Structure", href: "/admission/fee" },
-      { label: "Download Prospectus", href: "/admission/prospectus" },
+      { label: "Activity-hub", href: "/program/activity-hub" },
+      { label: "Prep-school", href: "/program/prep-school" },
     ],
   },
   {
@@ -48,22 +43,27 @@ const navItems = [
 export default function Navbar() {
   const [dropdown, setDropdown] = useState<string | null>(null);
   const [openMenu, setOpenMenu] = useState(false);
-  const [prevScrollY, setPrevScrollY] = useState(0);
   const [hidden, setHidden] = useState(false);
 
+  // Final scroll logic
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setHidden(currentScrollY > prevScrollY && currentScrollY > 80);
-      setPrevScrollY(currentScrollY);
+      const scrollY = window.scrollY;
+
+      if (scrollY <= 10 || scrollY > 350) {
+        setHidden(false); // Show
+      } else {
+        setHidden(true); // Hide
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollY]);
+  }, []);
 
   return (
     <nav
-      className={`bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] backdrop-blur-md shadow-md sticky top-0 z-50 border-b border-pink-300 transition-transform duration-300 ${
+      className={`fixed top-0 w-full z-50 bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] backdrop-blur-md shadow-md border-b border-pink-300 transition-transform duration-300 ${
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
@@ -74,20 +74,26 @@ export default function Navbar() {
             alt="Logo"
             width={50}
             height={50}
-            className="h-10 w-10 rounded-full"
+            className="h-10 w-10"
           />
           <span className="text-[3vmin] font-bold text-[#ff69b4]">
-            Little Buttons School
+            Little Buttons
           </span>
         </Link>
 
         <div className="md:hidden">
-          <Menu onClick={() => setOpenMenu(!openMenu)} className="text-pink-600" />
+          <Menu
+            onClick={() => setOpenMenu(!openMenu)}
+            className="text-pink-600"
+          />
         </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-6 text-[2.4vmin] font-medium">
-          <Link href="/" className="hover-underline-animation text-[#2563eb] hover:text-[#e11d48]">
+          <Link
+            href="/"
+            className="hover-underline-animation text-[#2563eb] hover:text-[#e11d48]"
+          >
             Home
           </Link>
 
@@ -165,7 +171,10 @@ export default function Navbar() {
                 </div>
               </details>
             ))}
-            <Link href="/contactus" className="block py-2 text-pink-600 font-semibold">
+            <Link
+              href="/contactus"
+              className="block py-2 text-pink-600 font-semibold"
+            >
               Contact Us
             </Link>
           </motion.div>

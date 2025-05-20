@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const VisionMissionPage = () => {
   return (
-    <main className="min-h-screen bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
+    <main className="min bg-gradient-to-r from-[#d6ecff] via-[#e0f3fc] to-[#fcd6e0] py-20 px-6 md:px-12">
       {/* Page Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -31,10 +31,13 @@ const VisionMissionPage = () => {
       >
         <h2 className="text-3xl font-bold text-blue-600 mb-4">Our Vision</h2>
         <p className="text-gray-800 text-base leading-relaxed">
-          To be a joyful and trusted place for early learning where every child
-          is respected, encouraged, and empowered to blossom in a nurturing
-          environment. We envision a community of curious, kind, and confident
-          learners equipped for lifelong success.
+          At Little Buttons, we envision a learning space where young children
+          are empowered to become curious thinkers, kind friends, and confident
+          learners. Our goal is to be a trusted partner for families, shaping a
+          community that celebrates diversity, encourages discovery, and lays
+          the foundation for lifelong success—both in school and beyond. Our
+          vision is to shape future-ready learners who are rooted in cultural
+          values yet equipped to thrive in a global world.
         </p>
       </motion.div>
 
@@ -48,11 +51,14 @@ const VisionMissionPage = () => {
       >
         <h2 className="text-3xl font-bold text-pink-600 mb-4">Our Mission</h2>
         <p className="text-gray-800 text-base leading-relaxed">
-          At Little Buttons School, our mission is to nurture young minds
-          through a holistic curriculum that balances academics, creativity,
-          social-emotional learning, and physical activity. We aim to provide a
-          secure and inspiring space that celebrates each child&#39;s individuality
-          and encourages them to thrive.
+          At Little Buttons, our mission is to create a joyful and secure
+          environment where children can grow, explore, and develop a genuine
+          enthusiasm for learning. We are committed to nurturing each
+          child&apos;s unique potential through purposeful play, meaningful
+          connections, and a curriculum tailored to support early development in
+          a caring, inclusive setting. We are committed to nurturing each
+          child’s individuality in a safe, loving environment that promotes
+          curiosity, creativity, and character-building from the very start.
         </p>
       </motion.div>
     </main>

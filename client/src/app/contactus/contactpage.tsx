@@ -13,9 +13,12 @@ const ContactPage = () => {
         transition={{ duration: 0.7 }}
         className="text-center mb-12"
       >
-        <h1 className="text-5xl font-bold text-[#ff69b4] mb-4">Contact Us</h1>
+        <h1 className="mt-16 text-5xl font-bold text-[#ff69b4] mb-4">
+          Contact Us
+        </h1>
         <p className="text-gray-700 text-lg max-w-xl mx-auto">
-          We love to hear from you! Reach out with your questions, suggestions, or feedback.
+          We love to hear from you! Reach out with your questions, suggestions,
+          or feedback.
         </p>
       </motion.div>
 
@@ -31,7 +34,9 @@ const ContactPage = () => {
         >
           <form className="space-y-6">
             <div>
-              <label className="block text-gray-700 font-medium mb-1">Name</label>
+              <label className="block text-gray-700 font-medium mb-1">
+                Name
+              </label>
               <input
                 type="text"
                 className="text-black w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-pink-400 outline-none bg-white/80 placeholder:text-gray-400"
@@ -39,7 +44,9 @@ const ContactPage = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-medium mb-1">Email</label>
+              <label className="block text-gray-700 font-medium mb-1">
+                Email
+              </label>
               <input
                 type="email"
                 className="text-black w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-400 outline-none bg-white/80 placeholder:text-gray-400"
@@ -47,7 +54,9 @@ const ContactPage = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-medium mb-1">Subject</label>
+              <label className="block text-gray-700 font-medium mb-1">
+                Subject
+              </label>
               <input
                 type="text"
                 className="text-black w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-400 outline-none bg-white/80 placeholder:text-gray-400"
@@ -55,7 +64,9 @@ const ContactPage = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-medium mb-1">Message</label>
+              <label className="block text-gray-700 font-medium mb-1">
+                Message
+              </label>
               <textarea
                 rows={4}
                 className="text-black w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-400 outline-none bg-white/80 placeholder:text-gray-400"
@@ -79,16 +90,19 @@ const ContactPage = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-white/60 backdrop-blur-md border border-white/30 rounded-3xl p-8 shadow-lg"
         >
-          <h2 className="text-2xl font-bold text-blue-600 mb-6">School Contact Info</h2>
+          <h2 className="text-2xl font-bold text-blue-600 mb-6">
+            School Contact Info
+          </h2>
           <ul className="space-y-4 text-gray-800">
             <li>
-              <strong>📍 Address:</strong> 123 Blossom Lane, Joytown, India
+              <strong>📍 Address:</strong> Villa 667 Omaxe city 1 ,Indore,
+              Madhya Pradesh
             </li>
             <li>
-              <strong>📞 Phone:</strong> +91 98765 43210
+              <strong>📞 Phone:</strong> +91 9039024010
             </li>
             <li>
-              <strong>📧 Email:</strong> contact@littlebuttons.edu.in
+              <strong>📧 Email:</strong> swarananjani.edu@gmail.com
             </li>
             <li>
               <strong>⏰ Timings:</strong> Mon–Fri: 8:30 AM – 3:30 PM

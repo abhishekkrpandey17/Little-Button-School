@@ -14,6 +14,7 @@ import testimonialRoutes from "./routes/testimonialRoutes.js";
 import extraContentRoutes from "./routes/extraContentRoutes.js";
 import programRoutes from "./routes/programRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
+import { EmailRouter } from "./routes/emailRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -57,5 +58,6 @@ app.use("/api/v1/testimonial", testimonialRoutes);
 app.use("/api/v1/extra", extraContentRoutes);
 app.use("/api/v1/program", programRoutes);
 app.use("/api/v1/admin", adminRoutes);
+app.use("/api/v1/email", EmailRouter);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
